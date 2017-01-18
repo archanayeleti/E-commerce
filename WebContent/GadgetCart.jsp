@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <%!
-ArrayList<String> list;
+HashMap<String, Integer> map;
 %>
 </head>
 <body>
@@ -17,23 +17,29 @@ ArrayList<String> ar=(ArrayList)session.getAttribute("usernames");
 if(ar==null){
 	ar=new ArrayList<String>();
 }
-	list = (ArrayList)session.getAttribute("gadgets");
+	map = (HashMap)session.getAttribute("cartItem");
 	String arr[] = request.getParameterValues("gadget");
 	
-	if(list == null){		
+	if(map == null){		
 		
-			list = new ArrayList<String>();
-	}
-	
-		for(int i=0;i<arr.length;i++){
-		list.add(arr[i]);
+		map = new HashMap<String,Integer>();
 		
 	}
+
+	for(int i=0;i<arr.length;i++){
+		if(map.containsKey(arr[i])){
+			map.put(arr[i], map.get(arr[i])+1);
+		}
+		else {
+			map.put(arr[i],1);
+		}
+	}
 		
-	session.setAttribute("gadgets",list );
-	
+	session.setAttribute("cartItem",map );
+	System.out.println(map);
 	
 %> 
 <jsp:forward page="ViewCart.jsp"></jsp:forward>
+
 </body>
 </html>
