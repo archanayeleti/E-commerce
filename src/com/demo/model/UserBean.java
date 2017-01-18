@@ -1,10 +1,7 @@
 package com.demo.model;
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 551d890d952b67a2473d96c9af3f7a9f2fcfd383
 public class UserBean {
 	private String username;
 	private String password;
