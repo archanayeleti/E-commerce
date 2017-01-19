@@ -9,17 +9,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	ArrayList<String> ar=(ArrayList)session.getAttribute("usernames");
-	if(ar==null){
+<%	
+	String list=request.getParameter("list");
+	String loginId =(String)session.getAttribute("LoggedUser");
+System.out.println(loginId);
+	if(loginId==null){
+		System.out.println("entered jsp");
 %>
-	<jsp:include page="login.html"></jsp:include>
-	<jsp:forward page="WishList.jsp"></jsp:forward>
+	<jsp:forward page="login.jsp"></jsp:forward>
 <%
 	}
 	else{
 %>
-	<jsp:forward page="WishList.jsp"></jsp:forward>
+	<jsp:forward page="WishList.jsp?list=<%=list %>"></jsp:forward>
 <%
 		
 	}

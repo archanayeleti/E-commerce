@@ -9,10 +9,10 @@
 </head>
 <body>
 <%
-	ArrayList<String> list=(ArrayList)session.getAttribute("gadgets");
+	HashMap<String,Integer> map=(HashMap)session.getAttribute("cartItem");
 	String item=request.getParameter("item");
-	list.remove(item);
-	session.setAttribute("gadgets", list);
+	map.remove(item);
+	session.setAttribute("cartItem", map);
 %>
 <jsp:forward page="ViewCart.jsp"></jsp:forward>
 </li>

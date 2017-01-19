@@ -9,10 +9,10 @@
 </head>
 <body>
 <%
-	ArrayList<String> list=(ArrayList)session.getAttribute("list_items");
+	ArrayList<String> list=(ArrayList)session.getAttribute("wishlistItem");
 	String item=request.getParameter("rem");
 	list.remove(item);
-	session.setAttribute("list_items", list);
+	session.setAttribute("wishlistItem", list);
 %>
 	<h2> You have the following items in your wish list:</h2>
 	<ul>

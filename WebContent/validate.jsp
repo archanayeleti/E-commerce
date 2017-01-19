@@ -13,10 +13,12 @@
 <jsp:useBean id="obj" class="com.demo.dao.UserDAO"/>
 
 <%
-	int x = obj.validateUser(user);
-	if(x==1){
+	String x = obj.validateUser(user);
+
+	if(x.length()!=0){
+		session.setAttribute("LoggedUser", x);
 %>
-	<jsp:forward page="index.html"/>
+	<jsp:forward page="CheckLoggedIn.jsp"/>
 	
 <% 	
 	//session.setAttribute("username", arg1)

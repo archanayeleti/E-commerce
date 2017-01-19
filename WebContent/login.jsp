@@ -6,6 +6,9 @@
 </head>
 <body>
 <form method="post" action="validate.jsp">
+<%
+session.removeAttribute("LoggedUser");
+%>
 <table>
 	<tr>
 		<td>Username</td>
@@ -18,6 +21,7 @@
 	<tr>
 		<td><input type="submit" value="submit" /></td>
 	</tr>
+	
 </table>
 </form>
 

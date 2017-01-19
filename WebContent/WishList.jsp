@@ -9,17 +9,18 @@
 </head>
 <body>
 <%
-	ArrayList<String> list=(ArrayList)session.getAttribute("list_items");
-	ArrayList<String> gad_list=(ArrayList)session.getAttribute("gadgets");
+	ArrayList<String> list=(ArrayList)session.getAttribute("wishlistItem");
+
+	HashMap<String, Integer> gad_map=(HashMap)session.getAttribute("cartItem");
 	String wishlist=request.getParameter("list");
 	if(list==null){
 		list=new ArrayList<String>();
 	}
 	list.add(wishlist);
-	session.setAttribute("list_items", list);
-	gad_list.remove(wishlist);
-	session.setAttribute("gadgets", gad_list);
-	System.out.println(session.getAttribute("gadgets"));
+	session.setAttribute("wishlistItem", list);
+	gad_map.remove(wishlist);
+	session.setAttribute("cartItem", gad_map);
+	System.out.println(session.getAttribute("cartItem"));
 %>
 	<h2> You have the following items in your wish list:</h2>
 	<ul>

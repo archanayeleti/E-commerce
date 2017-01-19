@@ -9,18 +9,20 @@
 </head>
 <body>
 <%
-ArrayList<String> list=(ArrayList)session.getAttribute("gadgets");
-	for(int i=0;i<list.size();i++){
+HashMap<String, Integer> map=(HashMap)session.getAttribute("cartItem");
+Iterator it = map.entrySet().iterator();
+while(it.hasNext()){
+	Map.Entry item = (Map.Entry) it.next();
 %>
 <table>
 	<tr>
-		<td><%=list.get(i) %></td>
-		<td>Quantity</td>
+		<td><%=item.getKey() %></td>
+		<td><%=item.getValue() %></td>
 		
 	</tr>
 	<tr>
-		<td><a href="login.html?list=<%= list.get(i) %>">Add to list</a></td>
-		<td><a href='RemoveFromCart.jsp?item=<%= list.get(i) %>'>Delete</a></td>
+		<td><a href="CheckLoggedIn.jsp?list=<%=  item.getKey() %>">Add to list</a></td>
+		<td><a href='RemoveFromCart.jsp?item=<%= item.getKey()  %>'>Delete</a></td>
 	</tr>
 </table>
 	
