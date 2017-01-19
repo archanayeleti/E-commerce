@@ -9,15 +9,23 @@
 </head>
 <body>
 <%
+<<<<<<< HEAD
 	ArrayList<String> list=(ArrayList)session.getAttribute("wishlistItem");
 
+=======
+	ArrayList<String> list=(ArrayList)session.getAttribute("list_items");
+>>>>>>> b9042cdf45fa20e0d2ee57aadf604ee9daf00c9e
 	HashMap<String, Integer> gad_map=(HashMap)session.getAttribute("cartItem");
 	String wishlist=request.getParameter("list");
 	if(list==null){
 		list=new ArrayList<String>();
 	}
 	list.add(wishlist);
+<<<<<<< HEAD
 	session.setAttribute("wishlistItem", list);
+=======
+	session.setAttribute("list_items", list);
+>>>>>>> b9042cdf45fa20e0d2ee57aadf604ee9daf00c9e
 	gad_map.remove(wishlist);
 	session.setAttribute("cartItem", gad_map);
 	System.out.println(session.getAttribute("cartItem"));
