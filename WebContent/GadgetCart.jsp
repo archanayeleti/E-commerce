@@ -18,18 +18,13 @@ if(ar==null){
 	ar=new ArrayList<String>();
 }
 	map = (HashMap)session.getAttribute("cartItem");
-<<<<<<< HEAD
 	String item = request.getParameter("item");
-=======
-	String arr[] = request.getParameterValues("gadget");
->>>>>>> b9042cdf45fa20e0d2ee57aadf604ee9daf00c9e
 	
 	if(map == null){		
 		
 		map = new HashMap<String,Integer>();
 		
 	}
-<<<<<<< HEAD
 	
 	if(map.containsKey(item)){
 		map.put(item, map.get(item)+1);
@@ -39,10 +34,6 @@ if(ar==null){
 	}
 
 	/* for(int i=0;i<arr.length;i++){
-=======
-
-	for(int i=0;i<arr.length;i++){
->>>>>>> b9042cdf45fa20e0d2ee57aadf604ee9daf00c9e
 		if(map.containsKey(arr[i])){
 			map.put(arr[i], map.get(arr[i])+1);
 		}
@@ -50,11 +41,7 @@ if(ar==null){
 			map.put(arr[i],1);
 		}
 	}
-<<<<<<< HEAD
 		 */
-=======
-		
->>>>>>> b9042cdf45fa20e0d2ee57aadf604ee9daf00c9e
 	session.setAttribute("cartItem",map );
 	System.out.println(map);
 	

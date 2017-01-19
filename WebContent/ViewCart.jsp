@@ -21,11 +21,7 @@ while(it.hasNext()){
 		
 	</tr>
 	<tr>
-<<<<<<< HEAD
 		<td><a href="CheckLoggedIn.jsp?list=<%=  item.getKey() %>">Add to list</a></td>
-=======
-		<td><a href="WishList.jsp?list=<%=  item.getKey() %>">Add to list</a></td>
->>>>>>> b9042cdf45fa20e0d2ee57aadf604ee9daf00c9e
 		<td><a href='RemoveFromCart.jsp?item=<%= item.getKey()  %>'>Delete</a></td>
 	</tr>
 </table>
