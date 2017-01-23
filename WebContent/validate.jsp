@@ -17,7 +17,10 @@
 
 	if(x.length()!=0){
 		session.setAttribute("LoggedUser", x);
+		System.out.println("x= "+x);
+		//String ses=(String)session.getAttribute("LoggedUser");
 %>
+	<jsp:include page="SessionValues.jsp"></jsp:include>
 	<jsp:forward page="CheckLoggedIn.jsp"/>
 	
 <% 	

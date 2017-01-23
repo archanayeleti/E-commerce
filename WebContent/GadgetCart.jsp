@@ -13,10 +13,10 @@ HashMap<String, Integer> map;
 <body>
 
 <%
-ArrayList<String> ar=(ArrayList)session.getAttribute("usernames");
-if(ar==null){
-	ar=new ArrayList<String>();
-}
+//ArrayList<String> ar=(ArrayList)session.getAttribute("usernames");
+//if(ar==null){
+//	ar=new ArrayList<String>();
+//}
 	map = (HashMap)session.getAttribute("cartItem");
 	String item = request.getParameter("item");
 	

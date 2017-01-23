@@ -13,6 +13,7 @@
 
 	HashMap<String, Integer> gad_map=(HashMap)session.getAttribute("cartItem");
 	String wishlist=request.getParameter("list");
+	System.out.println("wishlist"+wishlist);
 	if(list==null){
 		list=new ArrayList<String>();
 	}
@@ -22,21 +23,6 @@
 	session.setAttribute("cartItem", gad_map);
 	System.out.println(session.getAttribute("cartItem"));
 %>
-	<h2> You have the following items in your wish list:</h2>
-	<ul>
-<%	
-	for(int i=0;i<list.size();i++){
-%>
-	<li><%=list.get(i) %>
-	<a href="RemoveFromWishList.jsp?rem=<%=list.get(i) %>">Delete</a>
-	<br/><br/>
-<%
-	}
-	
-%>
-
-</li>
-</ul>
-<a href="ViewCart.jsp">back to cart</a>
+	<jsp:forward page="ViewWishList.jsp"></jsp:forward>
 </body>
 </html>

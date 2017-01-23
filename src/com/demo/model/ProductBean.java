@@ -6,7 +6,7 @@ public class ProductBean {
 	private String Desc;
 	private double Price;
 	private int CategoryId;
-	private String Icon;
+	//private String Icon;
 	
 	
 	public int getProductId() {
@@ -39,11 +39,11 @@ public class ProductBean {
 	public void setCategoryId(int categoryId) {
 		CategoryId = categoryId;
 	}
-	public String getIcon() {
-		return Icon;
-	}
-	public void setIcon(String icon) {
-		Icon = icon;
-	}
+//	public String getIcon() {
+//		return Icon;
+//	}
+//	public void setIcon(String icon) {
+//		Icon = icon;
+//	}
 
 }

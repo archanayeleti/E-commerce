@@ -10,9 +10,13 @@
 </head>
 <body>
 <%	
-	String list=request.getParameter("list");
+	System.out.println("dfds  "+request.getParameter("list"));
+	String list=(String)request.getParameter("list");
+	System.out.println("list  "+list);
+	session.setAttribute("sel_list", list);
+	System.out.println("S  "+session.getAttribute("sel_list"));
 	String loginId =(String)session.getAttribute("LoggedUser");
-System.out.println(loginId);
+	System.out.println(loginId);
 	if(loginId==null){
 		System.out.println("entered jsp");
 %>
@@ -20,10 +24,20 @@ System.out.println(loginId);
 <%
 	}
 	else{
+		String s=(String)session.getAttribute("sel_list");
+		System.out.println("S   "+s);
+		if(s==null){
 %>
-	<jsp:forward page="WishList.jsp?list=<%=list %>"></jsp:forward>
+			<jsp:forward page="ViewCart.jsp"></jsp:forward>
+<%
+
+		}
+		else{
+%>
+	<jsp:forward page="WishList.jsp?list=<%= s %>"></jsp:forward>
 <%
 		
+	}
 	}
 
 %>

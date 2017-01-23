@@ -19,7 +19,7 @@ public class UserDAO {
 	public UserDAO(){
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dec2016","root","littlehearts");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dec2016","root","Archana@12");
 			
 		}catch(Exception e){
 			e.printStackTrace();
@@ -28,7 +28,7 @@ public class UserDAO {
 	public String validateUser(UserBean user){
 		String x="";
 		try{
-			sql = "SELECT * FROM user WHERE username = ? AND password = ?";
+			sql = "SELECT * FROM user WHERE uname = ? AND pword = ?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1,user.getUsername());
 			ps.setString(2,user.getPassword());
@@ -58,7 +58,7 @@ public class UserDAO {
 				product.setDesc(rs.getString(3));
 				product.setPrice(rs.getInt(4));
 				product.setCategoryId(rs.getInt(5));
-				product.setIcon(rs.getString(6));
+				//product.setIcon(rs.getString(6));
 				rows.add(product);
 			}
 			
